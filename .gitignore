@@ -1,0 +1,7 @@
+headers 
+*.txt 
+*.class
+.vscode
+*.so
+*.a
+*.o

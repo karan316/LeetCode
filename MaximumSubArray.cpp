@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+
+//this solution passed 200/202 cases
+int main()
+{
+    // vector<int> nums = {};
+    vector<int> nums = {-1};
+    int max_sum = nums.at(0);
+    for (int i = 0; i < nums.size(); i++)
+    {
+        for (int j = i; j < nums.size(); j++)
+            max_sum = max(max_sum, accumulate(nums.begin() + i, nums.begin() + j + 1, 0));
+    }
+
+    cout << max_sum;
+}
+
+// correct solution
+// class Solution {
+// public:
+//     int maxSubArray(vector<int>& nums) {
+//         ios_base::sync_with_stdio(false);
+//     cin.tie(NULL);
+//     cout.tie(NULL);
+//         int max_current =nums.at(0), max_global= nums.at(0);
+//         for(int i = 1; i < nums.size();i++) {
+//             max_current = max(nums.at(i), max_current + nums.at(i));
+//             if(max_current > max_global) {
+//                 max_global = max_current;
+//             }
+//         }
+//         return max_global;
+//     }
+
+// };
