@@ -6,3 +6,4 @@ headers
 *.a
 *.o
 tempCodeRunnerFile.cpp
+sample.cpp
