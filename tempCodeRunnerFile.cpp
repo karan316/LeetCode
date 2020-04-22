@@ -1,2 +1,2 @@
 
-    int target = 9;
+    int min_col = INT_MAX;
