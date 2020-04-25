@@ -35,3 +35,22 @@ int main()
 //     }
 
 // };
+
+// int maxSubArray(vector<int> nums)
+// {
+//     int n = nums.size();
+//     vector<int> pref(n);
+//     for (int i = 0; i < n; i++)
+//     {
+//         pref[i] = nums[i] + (i == 0 ? 0 : pref[i - 1]);
+//     }
+
+//     int min_so_far = 0;
+//     int answer = INT_MIN;
+//     for (int i = 0; i < n; i++)
+//     {
+//         answer = max(answer, pref[i] - min_so_far);
+//         min_so_far = min(min_so_far, pref[i]);
+//     }
+//     return answer;
+// }
