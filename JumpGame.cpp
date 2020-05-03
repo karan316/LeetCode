@@ -4,25 +4,28 @@ using namespace std;
 
 int main()
 {
-    vector<int> nums = {2, 3, 1, 1};
-    bool flag = true;
-    for (int i = 0; i < nums.size(); i++)
+    vector<int> nums = {2, 3, 1, 5};
+    int n = nums.size();
+
+    if (n <= 1)
+        return true;
+    pair<int, int> interval{0, 0};
+    int jumps = 0;
+    while (true)
     {
-        if (nums[i] == 0)
-            flag = false;
-    }
-    if (flag == true)
-    {
-        cout << "true\n";
-        return 0;
-    }
-    else
-    {
-        for (int i = 0; i < nums.size(); i++)
+        jumps++;
+        int can_reach = -1;
+        for (int i = interval.first; i <= interval.second; i++)
         {
-            if (nums[i] == 0)
-            {
-            }
+            can_reach = max(can_reach, i + nums[i]);
         }
+        if (can_reach >= n - 1)
+            return true;
+        interval = {interval.second + 1, can_reach};
+
+        if (interval.first > interval.second)
+            return false;
     }
+
+    assert(false);
 }
