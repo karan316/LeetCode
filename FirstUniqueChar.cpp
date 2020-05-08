@@ -5,21 +5,16 @@ using namespace std;
 int main()
 {
     string s = "loveleetcode";
-    map<char, bool> map;
+    map<char, int> map;
 
-    for (int i = 0; i < s.length(); i++)
+    for (auto ch : s)
     {
-        if (map.find(s[i]) != map.end())
-        {
-            map[s[i]] = true;
-            continue;
-        }
-        map.insert(make_pair(s[i], false));
+        map[ch]++;
     }
 
     for (int i = 0; i < s.length(); i++)
     {
-        if (map[s[i]] == false)
+        if (map[s[i]] == 1)
         {
             cout << s[i] << " " << i << endl;
             return 0;
