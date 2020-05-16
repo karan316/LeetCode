@@ -17,18 +17,21 @@ int main()
     cout << max_sum;
 }
 
+// Kadane's algorithm
+// The maximum of a sub array (including negative numbers) is the either the current element or the sum of the current element and the maximum subarray sum till the previous index of current element(which ever is greater).
 // correct solution
 // class Solution {
 // public:
 //     int maxSubArray(vector<int>& nums) {
 //         ios_base::sync_with_stdio(false);
-//     cin.tie(NULL);
-//     cout.tie(NULL);
-//         int max_current =nums.at(0), max_global= nums.at(0);
+//         cin.tie(NULL);
+//         cout.tie(NULL);
+//         int max_current = nums.at(0); //current maximum
+//         int max_global= nums.at(0); //maximum sub array sum till the previous element
 //         for(int i = 1; i < nums.size();i++) {
 //             max_current = max(nums.at(i), max_current + nums.at(i));
 //             if(max_current > max_global) {
-//                 max_global = max_current;
+// max_global = max_current; //update the maximum subarray sum to current maximum
 //             }
 //         }
 //         return max_global;
